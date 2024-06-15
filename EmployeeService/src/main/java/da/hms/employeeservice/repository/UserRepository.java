@@ -1,0 +1,11 @@
+package da.hms.employeeservice.repository;
+
+import da.hms.employeeservice.model.UserEntity;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import java.util.Optional;
+
+public interface UserRepository extends JpaRepository<UserEntity, Integer> {
+    Optional<UserEntity> findByEmployeeId(String id);
+    boolean existsByEmployeeId(String id);
+}
